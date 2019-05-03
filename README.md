@@ -1,6 +1,6 @@
 
 
-This app will send the sms on the partners mobile number using third part service like msg91, <a href="https://msg91.com/"></a> You have to create an account in order to send the sms, after creating account you will be able to see the auth_key, there are two type of messages Transactional and Promotional you can read more here <a href="https://help.msg91.com/article/64-what-is-the-difference-between-transactional-promotional-and-sendotp-route"></a> these type and choose according to your use.
+This app will send the sms on the partners mobile number using third part service like msg91, href="https://msg91.com/ You have to create an account in order to send the sms, after creating account you will be able to see the auth_key, there are two type of messages Transactional and Promotional you can read more here https://help.msg91.com/article/64-what-is-the-difference-between-transactional-promotional-and-sendotp-route these type and choose according to your use.
 
 SMS menu will open the configuration for the channel, there are some required parameters to use the service, url, auth_key (from the msg91), sms sender and route, fill the the details from msg91 account you can find the settings in api menu in left.
 
