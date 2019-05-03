@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+
+        <record id="view_list_sent_sms" model="ir.ui.view">
+            <field name="name">sent sms list</field>
+            <field name="model">sent.sms</field>
+            <field name="arch" type="xml">
+                <tree string="Sent SMS">
+                    <field name="partner"/>
+                    <field name="channel"/>
+                    <field name="mobile"/>
+                    <field name="time"/>
+                    <field name="message"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_sent_sms" model="ir.ui.view">
+            <field name="name">sent sms form</field>
+            <field name="model">sent.sms</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="partner" style="width:30%%"/>
+                            <field name="channel" style="width:30%%"/>
+                            <field name="mobile" style="width:30%%"/>
+                            <field name="time" style="width:30%%"/>
+                            <field name="message" style="width:80%%"/>
+                            <field name="status" style="width:30%%"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_window_sms_sent">
+            <field name="name">Sent SMS</field>
+            <field name="res_model">sent.sms</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <menuitem
+                id="menu_sms_sent"
+                name="Sent SMS"
+                parent="menu_sms_root"
+                action="action_window_sms_sent"/>
+
+    </data>
+</odoo>
