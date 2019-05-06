@@ -26,8 +26,12 @@ class SendMessage(models.TransientModel):
                 raise UserError(_("Partner does not have mobile number"))
 
     def send_sms(self):
-        setting = self.env['res.config.settings'].search([])[-1]
-        if setting.group_send_sms:
+        try:
+            setting = self.env['res.config.settings'].search([])[-1]
+        except IndexError:
+            raise UserError(_("Please tick the 'Send SMS' box in general settings"))
+
+        if setting and setting.group_send_sms:
             mobile = self.default_data()
             _logger.info("Checking message content")
             if self.message:
